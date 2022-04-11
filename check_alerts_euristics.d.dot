@@ -1,0 +1,26 @@
+digraph G {
+st3 [shape="ellipse" label="начало
+ check_alerts "]
+io5 [shape="parallelogram" label="ввод  objects"]
+op8 [shape="box" label="alerts = [] "]
+cond11 [shape="diamond" label="if ('person' in objects) "]
+sub15 [shape="box" label="alerts.append('person',
+ datetime.now()) "]
+io35 [shape="parallelogram" label="вывод  alerts"]
+e33 [shape="ellipse" label="конец "]
+cond20 [shape="diamond" label="if (animals & objects) "]
+sub24 [shape="box" label="alerts.append('animal',
+ datetime.now()) "]
+op28 [shape="box" label="pass "]
+st3->io5 
+io5->op8 
+op8->cond11 
+cond11->sub15 [label="yes"]
+sub15->io35 
+io35->e33 
+cond11->cond20 [label="no"]
+cond20->sub24 [label="yes"]
+sub24->io35 
+cond20->op28 [label="no"]
+op28->io35 
+}
